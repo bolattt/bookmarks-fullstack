@@ -12,6 +12,8 @@ function Bookmarks() {
       .then((response) => setBookmarks(response.data))
       .catch((c) => console.warn("catch", c));
   }, []);
+
+  console.log(bookmarks);
   return (
     <div className="Bookmarks">
       <section>
