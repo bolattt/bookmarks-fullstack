@@ -8,17 +8,6 @@ const cn = {
   user: process.env.PG_USER,
 };
 
-let ssl = null;
-if (process.env.NODE_ENV === "development") {
-  ssl = { rejectUnauthorized: false };
-}
-const connectionString = process.env.ELEPHANT_SQL_URI;
-console.log(connectionString);
-const config = {
-  connectionString: connectionString,
-  max: 30,
-  ssl: ssl,
-};
-const db = pgp(config);
+const db = pgp({ connectionString: process.env.ELEPHANT_SQL_URI });
 
 module.exports = db;
