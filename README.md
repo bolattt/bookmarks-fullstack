@@ -4,4 +4,8 @@
 
 [Deployed Frontend On Netlify](https://bookmarks-pern-stack-frontend.netlify.app/)
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/de3d15a1-4b14-4888-9227-6ec32fe3f99c/deploy-status)](https://app.netlify.com/sites/bookmarks-pern-stack-frontend/deploys)
+
 [Deployed Backend on Render](https://bookmarks-pernstack-backend.onrender.com)
+
+Postgres Database is hosted on [elephant SQL](www.elephantsql.com).
