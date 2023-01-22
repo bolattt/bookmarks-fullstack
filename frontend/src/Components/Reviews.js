@@ -7,8 +7,15 @@ import ReviewForm from "./ReviewForm";
 const API = process.env.REACT_APP_API_URL;
 
 function Reviews() {
-  const [reviews, setReviews] = useState([]);
   let { id } = useParams();
+  const [reviews, setReviews] = useState([]);
+
+  useEffect(() => {
+    axios.get(`${API}/bookmarks/${id}/reviews`).then((response) => {
+      console.log(response.data);
+      setReviews(response.data);
+    });
+  }, [id]);
 
   const handleAdd = (newReview) => {
     axios
@@ -53,12 +60,6 @@ function Reviews() {
       .catch((c) => console.warn("catch", c));
   };
 
-  useEffect(() => {
-    axios.get(`${API}/bookmarks/${id}/reviews`).then((response) => {
-      console.log(response.data);
-      setReviews(response.data);
-    });
-  }, [id, API]);
   return (
     <section className="Reviews">
       <h2>Reviews</h2>

@@ -14,6 +14,7 @@ function BookmarkDetails() {
       setBookmark(response.data);
     });
   }, [id, navigate, API]);
+
   const deleteBookmark = () => {
     axios
       .delete(`${API}/bookmarks/${id}`)
@@ -22,9 +23,11 @@ function BookmarkDetails() {
       })
       .catch((c) => console.error("catch", c));
   };
+
   const handleDelete = () => {
     deleteBookmark();
   };
+
   return (
     <>
       <article>
